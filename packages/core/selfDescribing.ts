@@ -1,7 +1,7 @@
 // Core types for SelfDescribing components
 export interface ComponentMetadata {
   generated_at: string;
-  component_version: string;
+  component_version?: string;
   entity_id?: string;
   filters?: Record<string, any>;
   context_id?: string;
