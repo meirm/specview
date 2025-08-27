@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+  
+  <!-- Puzzle piece icon representing components -->
+  <path d="M8 12 L12 12 L12 8 L20 8 L20 12 L24 12 L24 20 L20 20 L20 24 L12 24 L12 20 L8 20 Z" 
+        fill="white" stroke="#1E40AF" stroke-width="1"/>
+  
+  <!-- Small dots representing data points -->
+  <circle cx="10" cy="10" r="1" fill="#F59E0B"/>
+  <circle cx="22" cy="14" r="1" fill="#10B981"/>
+  <circle cx="18" cy="22" r="1" fill="#EF4444"/>
+</svg>

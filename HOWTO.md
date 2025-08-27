@@ -1,133 +1,82 @@
-# 🧩 How to Use SpecView in Your Project
+# 📚 SpecView HOWTO Guide
 
-A comprehensive guide to integrating SelfDescribingComponents into any React project.
-
----
-
-## 📋 Table of Contents
-
-1. [Quick Start](#quick-start)
-2. [Installation](#installation)
-3. [Basic Usage](#basic-usage)
-4. [Creating SelfDescribingComponents](#creating-selfdescribingcomponents)
-5. [Data Integration](#data-integration)
-6. [Export & Sharing](#export--sharing)
-7. [Advanced Patterns](#advanced-patterns)
-8. [Best Practices](#best-practices)
-9. [Troubleshooting](#troubleshooting)
-
----
-
-## 🚀 Quick Start
-
-### 1. Install Dependencies
-
-```bash
-npm install @specview/react @specview/core
-# or
-yarn add @specview/react @specview/core
-```
-
-### 2. Create Your First Component
-
-```tsx
-import React from 'react';
-import { useSelfDescribing } from '@specview/react';
-
-interface MyData {
-  message: string;
-  timestamp: string;
-}
-
-export const HelloWorldComponent: React.FC = () => {
-  const selfDescribing = useSelfDescribing<MyData>({
-    componentId: 'hello-world',
-    description: 'A simple greeting component',
-    generateData: () => ({
-      message: 'Hello, SpecView!',
-      timestamp: new Date().toISOString()
-    })
-  });
-
-  const { currentView, toggleView, exportAsJSON, copyToClipboard, getData } = selfDescribing;
-  const data = getData();
-
-  return (
-    <div className="border rounded-lg p-4">
-      <div className="flex gap-2 mb-4">
-        <button onClick={toggleView} className="px-3 py-1 bg-blue-500 text-white rounded">
-          {currentView === 'visual' ? 'Show JSON' : 'Show Visual'}
-        </button>
-        <button onClick={exportAsJSON} className="px-3 py-1 bg-green-500 text-white rounded">
-          Export JSON
-        </button>
-        <button onClick={copyToClipboard} className="px-3 py-1 bg-gray-500 text-white rounded">
-          Copy JSON
-        </button>
-      </div>
-
-      {currentView === 'visual' ? (
-        <div>
-          <h2 className="text-xl font-bold">{data.message}</h2>
-          <p className="text-gray-600">Generated at: {data.timestamp}</p>
-        </div>
-      ) : (
-        <pre className="bg-gray-900 text-green-400 p-4 rounded overflow-auto">
-          {JSON.stringify(selfDescribing.getSelfDescribingOutput(), null, 2)}
-        </pre>
-      )}
-    </div>
-  );
-};
-```
-
-### 3. Use in Your App
-
-```tsx
-import React from 'react';
-import { HelloWorldComponent } from './HelloWorldComponent';
-
-function App() {
-  return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-8">My SpecView App</h1>
-      <HelloWorldComponent />
-    </div>
-  );
-}
-```
+**Complete guide to using SpecView in your projects**
 
 ---
 
 ## 📦 Installation
 
-### Prerequisites
-
-- React 16.8+ (for hooks support)
-- TypeScript (recommended)
-- Node.js 14+
-
-### Install Packages
+### Install the Packages
 
 ```bash
-# Core functionality
-npm install @specview/core
+# Install core types and React hooks
+npm install @meirm/specview-core @meirm/specview-react
 
-# React integration
-npm install @specview/react
+# Or with yarn
+yarn add @meirm/specview-core @meirm/specview-react
 
-# Export utilities (optional)
-npm install @specview/export-utils
+# Or with pnpm
+pnpm add @meirm/specview-core @meirm/specview-react
 ```
 
-### TypeScript Setup
+### Package Contents
 
-Add to your `tsconfig.json`:
+- **`@meirm/specview-core`**: Type definitions, interfaces, and core utilities
+- **`@meirm/specview-react`**: React hooks, base components, and utilities
+
+---
+
+## 🚀 Quick Start
+
+### 1. Import the Hook
+
+```typescript
+import { useSelfDescribing } from '@meirm/specview-react';
+```
+
+### 2. Create Your Component
+
+```typescript
+function MyAnalyticsComponent() {
+  const { data, metadata, exportData } = useSelfDescribing({
+    componentId: 'user-analytics',
+    description: 'User engagement analytics dashboard',
+    entityId: 'user-123',
+    contextId: 'session-456'
+  });
+
+  return (
+    <div>
+      {/* Your visual component here */}
+      <h2>User Analytics</h2>
+      
+      {/* Export button */}
+      <button onClick={() => {
+        const jsonData = exportData();
+        console.log('Self-describing output:', jsonData);
+      }}>
+        Export JSON
+      </button>
+    </div>
+  );
+}
+```
+
+### 3. Use the Output
+
+The `exportData()` function returns a structured `SelfDescribingOutput`:
 
 ```json
 {
-  "compilerOptions": {
-    "types": ["@specview/core"]
+  "component_id": "user-analytics",
+  "description": "User engagement analytics dashboard",
+  "data": {
+    // Your component's data here
+  },
+  "metadata": {
+    "entity_id": "user-123",
+    "context_id": "session-456",
+    "generated_at": "2025-08-27T18:56:33.265Z"
   }
 }
 ```

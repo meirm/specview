@@ -4,23 +4,32 @@
 
 ---
 
+## 📦 Packages
+
+**Published on npm:**
+- [`@meirm/specview-core`](https://www.npmjs.com/package/@meirm/specview-core) - Core types and interfaces
+- [`@meirm/specview-react`](https://www.npmjs.com/package/@meirm/specview-react) - React hooks and utilities
+
+**Repository:** [https://github.com/meirm/specview](https://github.com/meirm/specview)
+
+---
+
 ## ✨ What is SpecView?
 
 **SpecView** is a framework for building **intelligent visual components** that explain themselves.  
 Every component in SpecView exports a structured `SelfDescribingOutput` — making it:
 
-- 🧠 **LLM-ready**: Understandable by large language models for reasoning, summarizing, and reporting
-- 🖼️ **Dual-mode**: Switch between visual charts and JSON metadata
-- 📦 **Exportable**: Output to JSON, CSV, GeoJSON, HTML, or PDF
-- 📚 **Auditable**: Automatically includes filters, timestamps, and context
+* 🧠 **LLM-ready**: Understandable by large language models for reasoning, summarizing, and reporting
+* 🖼️ **Dual-mode**: Switch between visual charts and JSON metadata
+* 📦 **Exportable**: Output to JSON, CSV, GeoJSON, HTML, or PDF
+* 📚 **Auditable**: Automatically includes filters, timestamps, and context
 
 Whether you're building dashboards, investigation tools, or AI-assisted reporting engines — **SpecView** makes each component **a shareable insight block**.
 
 ---
 
-## 📦 Packages
+## 📦 Project Structure
 
-```bash
 specview/
 ├── docs/                  # Technical specs, architecture, and design notes
 ├── examples/              # Sample apps and dashboards
@@ -29,35 +38,73 @@ specview/
     ├── react/             # Hooks, base classes, HOCs for React integration
     ├── export-utils/      # Export formats and snapshot tools
     └── components/        # Pre-built or sample components (timeline, network, etc.)
+
+---
+
+## 🔍 Why SpecView?
+
+| Feature | Benefit |
+|---------|---------|
+| 🧠 AI-compatible output | Let LLMs parse, reason, and generate from components |
+| 🧾 Embedded metadata | Every component knows its filters, target, context |
+| 🖼️ Dual view modes | Visual or structured JSON — toggle instantly |
+| 📄 Exportable reports | Generate JSON/CSV/PDF from any component |
+| 🔁 Snapshot support | Save, rehydrate, and share full dashboards |
+
+---
+
+## 🛠️ Getting Started
+
+📖 **[📚 Complete HOWTO Guide](HOWTO.md)** - Learn how to use SpecView in your projects
+
+### Quick Installation
+
+```bash
+# Install the packages
+npm install @meirm/specview-core @meirm/specview-react
+
+# Or with yarn
+yarn add @meirm/specview-core @meirm/specview-react
 ```
 
-⸻
+### Basic Usage
 
-🔍 Why SpecView?
+```typescript
+import { useSelfDescribing } from '@meirm/specview-react';
 
-Feature	Benefit
-🧠 AI-compatible output	Let LLMs parse, reason, and generate from components
-🧾 Embedded metadata	Every component knows its filters, target, context
-🖼️ Dual view modes	Visual or structured JSON — toggle instantly
-📄 Exportable reports	Generate JSON/CSV/PDF from any component
-🔁 Snapshot support	Save, rehydrate, and share full dashboards
+function MyComponent() {
+  const { data, metadata, exportData } = useSelfDescribing({
+    componentId: 'my-component',
+    description: 'My self-describing component',
+    entityId: 'user-123',
+    contextId: 'session-456'
+  });
 
+  return (
+    <div>
+      {/* Your visual component */}
+      <button onClick={() => console.log(exportData())}>
+        Export JSON
+      </button>
+    </div>
+  );
+}
+```
 
-⸻
+### Explore the Demo
 
-��️ Getting Started
-
-📖 **📚 [Complete HOWTO Guide](HOWTO.md)** - Learn how to use SpecView in your projects
-
-Coming soon — once packages are published.
-
-For now, clone the repo and explore:
-
+```bash
+# Clone the repository
 git clone https://github.com/meirm/specview
 cd specview
-pnpm install # or yarn / npm
 
-⸻
+# Run the demo
+cd examples/demo-app
+npm install
+npm run dev
+```
+
+---
 
 ## 🎯 Demo: SelfDescribingComponents in Action
 

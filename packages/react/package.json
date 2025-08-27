@@ -1,5 +1,5 @@
 {
-  "name": "@specview/react",
+  "name": "@meirm/specview-react",
   "version": "1.0.0",
   "description": "React hooks and utilities for SpecView SelfDescribingComponents",
   "main": "dist/index.js",
@@ -38,7 +38,7 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@specview/core": "^1.0.0"
+    "@meirm/specview-core": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
