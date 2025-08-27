@@ -6,23 +6,103 @@
 
 ## 📦 Installation
 
-### Install the Packages
+### Prerequisites
 
+Before installing SpecView, make sure you have:
+- **Node.js** 16.0 or higher
+- **npm**, **yarn**, or **pnpm** package manager
+- **React** 16.8+ (for hooks support)
+- **TypeScript** (recommended for type safety)
+
+### Install from npm Registry
+
+SpecView packages are published on the npm registry and ready to use:
+
+#### Using npm
 ```bash
 # Install core types and React hooks
 npm install @meirm/specview-core @meirm/specview-react
 
-# Or with yarn
+# Install as dev dependencies (if you only need types)
+npm install --save-dev @meirm/specview-core
+```
+
+#### Using yarn
+```bash
+# Install core types and React hooks
 yarn add @meirm/specview-core @meirm/specview-react
 
-# Or with pnpm
+# Install as dev dependencies (if you only need types)
+yarn add --dev @meirm/specview-core
+```
+
+#### Using pnpm
+```bash
+# Install core types and React hooks
 pnpm add @meirm/specview-core @meirm/specview-react
+
+# Install as dev dependencies (if you only need types)
+pnpm add --save-dev @meirm/specview-core
 ```
 
 ### Package Contents
 
 - **`@meirm/specview-core`**: Type definitions, interfaces, and core utilities
+  - `SelfDescribingOutput` interface
+  - `ComponentMetadata` interface
+  - Version information and build details
 - **`@meirm/specview-react`**: React hooks, base components, and utilities
+  - `useSelfDescribing` hook
+  - `SelfDescribingComponent` base class
+  - Export utilities
+
+### Verify Installation
+
+After installation, you can verify the packages are working:
+
+```typescript
+// Test import
+import { useSelfDescribing } from '@meirm/specview-react';
+import { VERSION } from '@meirm/specview-core';
+
+console.log('SpecView version:', VERSION); // Should output: 1.1.0
+```
+
+### Installation Scenarios
+
+#### For React Applications
+```bash
+# Full installation for React apps
+npm install @meirm/specview-core @meirm/specview-react
+```
+
+#### For TypeScript Libraries
+```bash
+# Only core types for library development
+npm install --save-dev @meirm/specview-core
+```
+
+#### For Existing Projects
+```bash
+# Add to existing React project
+npm install @meirm/specview-core @meirm/specview-react
+
+# Update existing installation
+npm update @meirm/specview-core @meirm/specview-react
+```
+
+#### For Development/Contributing
+```bash
+# Clone and link locally for development
+git clone https://github.com/meirm/specview
+cd specview
+npm install
+npm run build
+npm link
+
+# In your project
+npm link @meirm/specview-core @meirm/specview-react
+```
 
 ---
 
@@ -680,3 +760,53 @@ export const AnalyticsDashboard: React.FC = () => {
 ---
 
 *Happy building with SpecView! 🚀*
+
+### Verify Installation
+
+After installation, you can verify the packages are working:
+
+```typescript
+// Test import
+import { useSelfDescribing } from '@meirm/specview-react';
+import { VERSION } from '@meirm/specview-core';
+
+console.log('SpecView version:', VERSION); // Should output: 1.1.0
+```
+
+### Installation Scenarios
+
+#### For React Applications
+```bash
+# Full installation for React apps
+npm install @meirm/specview-core @meirm/specview-react
+```
+
+#### For TypeScript Libraries
+```bash
+# Only core types for library development
+npm install --save-dev @meirm/specview-core
+```
+
+#### For Existing Projects
+```bash
+# Add to existing React project
+npm install @meirm/specview-core @meirm/specview-react
+
+# Update existing installation
+npm update @meirm/specview-core @meirm/specview-react
+```
+
+#### For Development/Contributing
+```bash
+# Clone and link locally for development
+git clone https://github.com/meirm/specview
+cd specview
+npm install
+npm run build
+npm link
+
+# In your project
+npm link @meirm/specview-core @meirm/specview-react
+```
+
+---

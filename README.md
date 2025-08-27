@@ -81,17 +81,22 @@ specview/
 
 📖 **[📚 Complete HOWTO Guide](HOWTO.md)** - Learn how to use SpecView in your projects
 
-### Quick Installation
+### 📦 Installation
+
+Install SpecView packages from npm:
 
 ```bash
-# Install the packages
+# Install core types and React hooks
 npm install @meirm/specview-core @meirm/specview-react
 
 # Or with yarn
 yarn add @meirm/specview-core @meirm/specview-react
+
+# Or with pnpm
+pnpm add @meirm/specview-core @meirm/specview-react
 ```
 
-### Basic Usage
+### 🚀 Quick Start
 
 ```typescript
 import { useSelfDescribing } from '@meirm/specview-react';
@@ -115,7 +120,7 @@ function MyComponent() {
 }
 ```
 
-### Explore the Demo
+### 🎯 Explore the Demo
 
 ```bash
 # Clone the repository
