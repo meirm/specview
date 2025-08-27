@@ -12,6 +12,28 @@
 
 **Repository:** [https://github.com/meirm/specview](https://github.com/meirm/specview)
 
+**Current Version:** `1.0.0` - See [VERSION](VERSION) file for latest version
+
+---
+
+## 🔄 Version Management
+
+SpecView uses semantic versioning. To update the version across all packages:
+
+```bash
+# Update to a new version (e.g., 1.1.0)
+npm run version:update 1.1.0
+
+# Or run the script directly
+node scripts/update-version.js 1.1.0
+```
+
+This will update:
+- `VERSION` file
+- `version.js` and `version.ts` files
+- All package.json files in the monorepo
+- Core package exports
+
 ---
 
 ## ✨ What is SpecView?
