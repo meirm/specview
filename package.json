@@ -1,0 +1,38 @@
+{
+  "name": "specview",
+  "version": "1.0.0",
+  "description": "Self-describing components for AI-native, human-friendly analytics",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "clean": "npm run clean --workspaces",
+    "publish:core": "cd packages/core && npm publish",
+    "publish:react": "cd packages/react && npm publish",
+    "publish:all": "npm run publish:core && npm run publish:react"
+  },
+  "keywords": [
+    "specview",
+    "self-describing",
+    "components",
+    "ai",
+    "analytics",
+    "react",
+    "typescript"
+  ],
+  "author": "meirm@cyborg.fi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meirm/specview.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meirm/specview/issues"
+  },
+  "homepage": "https://github.com/meirm/specview#readme",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

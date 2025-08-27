@@ -1,0 +1,50 @@
+{
+  "name": "@specview/react",
+  "version": "1.0.0",
+  "description": "React hooks and utilities for SpecView SelfDescribingComponents",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "specview",
+    "react",
+    "hooks",
+    "self-describing",
+    "components",
+    "ai",
+    "analytics"
+  ],
+  "author": "meirm@cyborg.fi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meirm/specview.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/meirm/specview/issues"
+  },
+  "homepage": "https://github.com/meirm/specview#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@specview/core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

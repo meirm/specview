@@ -1,0 +1,41 @@
+{
+  "name": "@specview/core",
+  "version": "1.0.0",
+  "description": "Core types and interfaces for SpecView SelfDescribingComponents",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "specview",
+    "self-describing",
+    "components",
+    "ai",
+    "analytics",
+    "typescript"
+  ],
+  "author": "meirm@cyborg.fi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meirm/specview.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/meirm/specview/issues"
+  },
+  "homepage": "https://github.com/meirm/specview#readme",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
