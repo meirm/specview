@@ -162,6 +162,7 @@ npm run dev
 
 🧩 Example: Self-Describing Output
 
+```
 {
   "component_id": "timeline-analysis",
   "description": "Timeline of sales events",
@@ -177,7 +178,7 @@ npm run dev
     "generated_at": "2025-08-27T14:00:00Z"
   }
 }
-
+```
 
 ⸻
 
