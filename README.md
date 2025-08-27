@@ -12,7 +12,7 @@
 
 **Repository:** [https://github.com/meirm/specview](https://github.com/meirm/specview)
 
-**Current Version:** `1.0.0` - See [VERSION](VERSION) file for latest version
+**Current Version:** `1.1.0` - See [VERSION](VERSION) file for latest version
 
 ---
 
