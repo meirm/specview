@@ -93,13 +93,13 @@ npm run dev
 
 {
   "component_id": "timeline-analysis",
-  "description": "Timeline of communication events",
+  "description": "Timeline of sales events",
   "data": {
     "events": [...],
     "summary": {...}
   },
   "metadata": {
-    "store_id": "+523336090820",
+    "store_id": "1001",
     "filters": {
       "date_range": { "start": "...", "end": "..." }
     },
