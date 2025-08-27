@@ -52,6 +52,7 @@ Whether you're building dashboards, investigation tools, or AI-assisted reportin
 
 ## 📦 Project Structure
 
+```
 specview/
 ├── docs/                  # Technical specs, architecture, and design notes
 ├── examples/              # Sample apps and dashboards
@@ -60,6 +61,7 @@ specview/
     ├── react/             # Hooks, base classes, HOCs for React integration
     ├── export-utils/      # Export formats and snapshot tools
     └── components/        # Pre-built or sample components (timeline, network, etc.)
+```
 
 ---
 
